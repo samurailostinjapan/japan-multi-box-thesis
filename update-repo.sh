@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "Pulling the latest changes from the remote repository..."
-git pull --rebase
+#echo "Pulling the latest changes from the remote repository..."
+#git pull --rebase
 
 echo "Staging all changes..."
 git add --all

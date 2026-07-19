@@ -1,0 +1,45 @@
+site_name: Japan's Multi-Box Compression
+site_description: A thesis on Japan's fiscal, monetary, demographic, corporate, household, and political compression.
+site_url: https://samurailostinjapan.github.io/japan-multi-box-thesis/
+repo_url: https://github.com/samurailostinjapan/japan-multi-box-thesis
+repo_name: samurailostinjapan/japan-multi-box-thesis
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.top
+    - toc.follow
+    - search.highlight
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Core Thesis: core-thesis.md
+  - Thesis Outline: thesis-outline.md
+  - Chapters:
+      - 1. Introduction: chapters/01-introduction.md
+      - 2. Historical Stability Regime: chapters/02-historical-regime.md
+      - 3. Demographic Arithmetic: chapters/03-demographics.md
+      - 4. Debt and Fiscal Capacity: chapters/04-debt-fiscal-capacity.md
+      - 5. BOJ, JGBs, and the Yen: chapters/05-boj-jgb-yen.md
+      - 6. Corporate Japan and SMEs: chapters/06-corporate-japan.md
+      - 7. Wages, Bonuses, and Households: chapters/07-wages-bonuses-households.md
+      - 8. Healthcare and Elderly Care: chapters/08-healthcare-elderly-care.md
+      - 9. Politics and Policy Collision: chapters/09-politics-policy-collision.md
+      - 10. Foreign Capital and Pensions: chapters/10-foreign-capital-pensions.md
+      - 11. Future Projections: chapters/11-future-projections.md
+      - 12. Counterarguments and Conclusion: chapters/12-conclusion.md
+  - Sources: sources.md
