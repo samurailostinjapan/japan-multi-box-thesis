@@ -1,9 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-#echo "Pulling the latest changes from the remote repository..."
-#git pull --rebase
-
 echo "Staging all changes..."
 git add --all
 
@@ -15,14 +12,17 @@ fi
 read -rp "Enter your commit message: " commit_message
 
 if [[ -z "$commit_message" ]]; then
-    echo "Error: Commit message cannot be empty. Aborting commit."
+    echo "Error: Commit message cannot be empty."
     exit 1
 fi
 
-echo "Committing changes..."
+echo "Committing local changes..."
 git commit -m "$commit_message"
 
-echo "Pushing changes to the remote repository..."
-git push
+echo "Integrating remote changes..."
+git pull --rebase origin main
+
+echo "Pushing changes..."
+git push origin main
 
 echo "Git operations completed successfully."
