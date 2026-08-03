@@ -1,45 +1,100 @@
-site_name: Japan's Multi-Box Compression
-site_description: A thesis on Japan's fiscal, monetary, demographic, corporate, household, and political compression.
+site_name: Japan's Slow Compression
+site_description: Fiscal dominance, policy collision, and Japan's transition from managed stability to market-driven constraint.
 site_url: https://samurailostinjapan.github.io/japan-multi-box-thesis/
 repo_url: https://github.com/samurailostinjapan/japan-multi-box-thesis
 repo_name: samurailostinjapan/japan-multi-box-thesis
+edit_uri: edit/main/docs/
+copyright: Independent research monograph · Evidence cutoff July 31, 2026
 
 theme:
   name: material
   language: en
+  logo: assets/monograph-mark.svg
+  favicon: assets/monograph-mark.svg
+  font: false
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
   features:
     - navigation.sections
+    - navigation.indexes
     - navigation.top
+    - navigation.footer
     - toc.follow
     - search.highlight
+    - search.suggest
+    - content.footnote.tooltips
+    - content.action.edit
 
 plugins:
-  - search
+  - search:
+      separator: '[\\s\\-–—,:;!=\\[\\]()"`/]+|\\.(?!\\d)|&[lg]t;|(?!\\b)(?=[A-Z][a-z])'
 
 markdown_extensions:
   - admonition
+  - attr_list
   - footnotes
+  - md_in_html
   - tables
   - toc:
       permalink: true
+      title: On this page
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+exclude_docs: |
+  chapters/*.zip
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/reading.js
+
+extra:
+  status:
+    draft: First full draft
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/samurailostinjapan/japan-multi-box-thesis
+      name: Source repository
 
 nav:
   - Home: index.md
-  - Core Thesis: core-thesis.md
-  - Thesis Outline: thesis-outline.md
-  - Chapters:
-      - 1. Introduction: chapters/01-introduction.md
-      - 2. Historical Stability Regime: chapters/02-historical-regime.md
-      - 3. Demographic Arithmetic: chapters/03-demographics.md
-      - 4. Debt and Fiscal Capacity: chapters/04-debt-fiscal-capacity.md
-      - 5. BOJ, JGBs, and the Yen: chapters/05-boj-jgb-yen.md
-      - 6. Corporate Japan and SMEs: chapters/06-corporate-japan.md
-      - 7. Wages, Bonuses, and Households: chapters/07-wages-bonuses-households.md
-      - 8. Healthcare and Elderly Care: chapters/08-healthcare-elderly-care.md
-      - 9. Politics and Policy Collision: chapters/09-politics-policy-collision.md
-      - 10. Foreign Capital and Pensions: chapters/10-foreign-capital-pensions.md
-      - 11. Future Projections: chapters/11-future-projections.md
-      - 12. Counterarguments and Conclusion: chapters/12-conclusion.md
-  - Sources: sources.md
+  - Thesis:
+      - Core Argument: core-thesis.md
+      - Framework Map: thesis-map.md
+      - Reading Guide: thesis-outline.md
+  - Monograph:
+      - "1. The Japanese Stability Puzzle": chapters/chapter-01-introduction-japanese-stability-puzzle.md
+      - "2. Literature, Framework, and Method": chapters/chapter-02-literature-framework-method.md
+      - "3. The Old Stability Regime": chapters/chapter-03-construction-exhaustion-old-stability-regime.md
+      - "4. Fiscal Dominance and Refinancing": chapters/chapter-04-fiscal-dominance-and-refinancing-constraint.md
+      - "5. The BOJ, JGB Market, and Yen": chapters/chapter-05-bank-of-japan-jgb-market-yen.md
+      - "6. Households, Firms, SMEs, and Banks": chapters/chapter-06-domestic-transmission-households-firms-smes-banks.md
+      - "7. Demographic Compression": chapters/chapter-07-demographic-compression.md
+      - "8. Political Management and the Subsidy State": chapters/chapter-08-political-management-and-subsidy-state.md
+      - "9. The Multi-Box Mechanism": chapters/chapter-09-multi-box-compression-mechanism.md
+      - "10. Scenarios and Warning Signals": chapters/chapter-10-scenarios-warning-signals-falsification.md
+      - "11. The Erosion of Policy Sovereignty": chapters/chapter-11-conclusion-erosion-policy-sovereignty.md
+  - Evidence & Sources: sources.md
